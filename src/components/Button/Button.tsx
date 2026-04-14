@@ -1,5 +1,6 @@
 import React from "react";
 import type { ButtonProps } from "./Button.types";
+import { buttonBase, buttonVariants } from "./Button.css";
 
 const Button: React.FC<ButtonProps> = ({
   variant = "primary",
@@ -7,7 +8,7 @@ const Button: React.FC<ButtonProps> = ({
   ...rest
 }) => {
   return (
-    <button className={`outline-button outline-${variant}`} {...rest}>
+    <button className={`${buttonBase} ${buttonVariants[variant]}`} {...rest}>
       {children}
     </button>
   );
